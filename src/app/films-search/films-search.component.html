@@ -1,0 +1,22 @@
+<h2>Название</h2>
+<p>film: {{filmToSearch}}</p>
+<div>
+  <label for="film">Название</label>
+  <input
+    id="film"
+    [(ngModel)]="filmToSearch"
+    (search)="lookForFilm()"
+    [incremental]="filmToSearch"
+    type="search"
+    placeholder="Например, Титаник"
+  />
+</div>
+<ul class="films">
+  <li *ngFor="let film of filmsSuggested" class="badge">
+    <img alt="Постер фильма" src="{{film.imageAddress}}" />
+    <ul class="badgeInfo">
+      <li class="name">{{film.name}}</li>
+      <li class="year">{{film.year}}</li>
+    </ul>
+  </li>
+</ul>
