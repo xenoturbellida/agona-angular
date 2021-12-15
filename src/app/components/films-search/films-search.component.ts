@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FILMS } from "../mock-films";
-import {IFilm} from "../film.interface";
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FILMS } from "../../mock-films";
+import {IFilm} from "../../film.interface";
 
 @Component({
   selector: 'app-films-search',
@@ -10,6 +10,8 @@ import {IFilm} from "../film.interface";
 export class FilmsSearchComponent implements OnInit {
   filmToSearch: string = '';
   filmsSuggested: IFilm[] = [];
+
+  @Output() filmFoundEvent = new EventEmitter<IFilm>();
 
   constructor() { }
 
@@ -22,8 +24,21 @@ export class FilmsSearchComponent implements OnInit {
       if (filmStored.includes(filmInput)) {
         this.filmsSuggested.push(film);
       }
+      if (this.filmsSuggested.length === 5) return;
     }
   }
+
+  chooseFilm(film: IFilm) {
+    this.filmFoundEvent.emit(film);
+  }
+
+  tryToChooseFilm() {
+    if (this.filmsSuggested.length !== 0) {
+      const film = this.filmsSuggested[0];
+      this.chooseFilm(film);
+    }
+  }
+
   ngOnInit(): void {
   }
 

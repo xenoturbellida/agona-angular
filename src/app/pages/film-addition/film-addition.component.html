@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="content">
+  <h1 class="caption">О фильме</h1>
+  <form [formGroup]="toggleForm">
+    <app-toggle formControlName="toggle"></app-toggle>
+  </form>
+  <app-films-search *ngIf="showSearch && !showPreFilledForm" (filmFoundEvent)="fillFilmDetails($event)"></app-films-search>
+  <app-film-addition-form *ngIf="!showSearch"></app-film-addition-form>
+  <app-film-addition-form *ngIf="showPreFilledForm && showSearch" [film]="film"></app-film-addition-form>
+</div>

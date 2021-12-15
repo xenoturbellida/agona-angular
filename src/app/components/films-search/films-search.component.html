@@ -1,12 +1,11 @@
-<h2>Название</h2>
-<p>film: {{filmToSearch}}</p>
-<div>
+<div class="search">
   <label for="film">Название</label>
   <input
     id="film"
     [(ngModel)]="filmToSearch"
     (search)="lookForFilm()"
     [incremental]="filmToSearch"
+    (keyup.enter)="tryToChooseFilm()"
     type="search"
     placeholder="Например, Титаник"
   />
@@ -15,7 +14,9 @@
   <li *ngFor="let film of filmsSuggested" class="badge">
     <img alt="Постер фильма" src="{{film.imageAddress}}" />
     <ul class="badgeInfo">
-      <li class="name">{{film.name}}</li>
+      <li class="name">
+        <button type="button" (click)="chooseFilm(film)">{{film.name}}</button>
+      </li>
       <li class="year">{{film.year}}</li>
     </ul>
   </li>
