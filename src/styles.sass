@@ -17,10 +17,6 @@
   font-family: 'SF-Pro'
   font-weight: 600
   src: url('assets/fonts/SF-Pro-Display-Semibold.otf') format('opentype')
-//@font-face
-//  font-family: "San Francisco"
-//  font-weight: 400
-//  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff")
 
 h1
   font-size: 36px
@@ -29,5 +25,28 @@ ul
   list-style-type: none
   padding-left: 0
 
-input[type=search]
-  -webkit-appearance: none
+label
+  font-family: SF-Pro, sans-serif
+  font-size: 22px
+  font-weight: bold
+
+input, textarea
+  font-family: SF-Pro, sans-serif
+  font-weight: normal
+  font-size: 17px
+  border-top: none
+  border-left: none
+  border-right: none
+  border-bottom-color: lightgray
+  padding: 18px 0
+
+  &:focus
+    outline:  none
+    caret-color: #002DFF
+
+  &::placeholder
+    color: #3C3C434D
+
+textarea
+  resize: vertical
+  border-width: 2px

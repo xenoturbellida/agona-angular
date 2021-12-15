@@ -13,11 +13,11 @@
 <ul class="films">
   <li *ngFor="let film of filmsSuggested" class="badge">
     <img alt="Постер фильма" src="{{film.imageAddress}}" />
-    <ul class="badgeInfo">
-      <li class="name">
+    <ul>
+      <li>
         <button type="button" (click)="chooseFilm(film)">{{film.name}}</button>
       </li>
-      <li class="year">{{film.year}}</li>
+      <li class="badgeYear">{{film.year}}</li>
     </ul>
   </li>
 </ul>

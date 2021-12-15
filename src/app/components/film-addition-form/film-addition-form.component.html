@@ -1,14 +1,41 @@
 <form class='additionForm' [formGroup]="form" (ngSubmit)="onSubmit()">
   <label for="newFilmName">Название</label>
-  <input id="newFilmName" type="text" placeholder="titanic" formControlName="name" />
+  <input
+    id="newFilmName"
+    type="text"
+    placeholder="Например, Титаник"
+    formControlName="name"
+  />
   <label for="newFilmYear">Год</label>
-  <input id="newFilmYear" type="text" formControlName="year" />
+  <input
+    id="newFilmYear"
+    type="text"
+    placeholder="Укажите год выхода фильма"
+    formControlName="year"
+  />
   <label for="newFilmSynopsis">Описание</label>
-  <textarea id="newFilmSynopsis" formControlName="synopsis"></textarea>
-<!--  <input id="newFilmSynopsis" type="text" formControlName="synopsis" />-->
+  <textarea
+    id="newFilmSynopsis"
+    placeholder="Напишите пару слов о сюжете"
+    formControlName="synopsis"
+  >
+  </textarea>
   <label for="newFilmGenre">Жанр</label>
-  <input id="newFilmGenre" type="text" formControlName="genre" />
+  <input
+    id="newFilmGenre"
+    type="text"
+    placeholder="Выберите из списка"
+    formControlName="genre"
+  />
   <label for="newFilmPoster">Постер</label>
-  <input id="newFilmPoster" type="image" formControlName="poster" />
-  <button type="submit">Сохранить</button>
+  <input
+    id="newFilmPoster"
+    type="image"
+    formControlName="poster"
+  />
+  <div class="buttonPlus">
+    <span></span>
+    <button type="submit">Сохранить</button>
+  </div>
+
 </form>

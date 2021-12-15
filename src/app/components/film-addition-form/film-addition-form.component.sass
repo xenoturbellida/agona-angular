@@ -6,25 +6,30 @@
   display: flex
   flex-direction: column
 
-  label
-    font-family: SF-Pro, sans-serif
-    font-size: 22px
-    font-weight: bold
-
   input, textarea
+    margin-bottom: 20px
+
+.buttonPlus
+  align-self: center
+
+  span
+    background: url(../../../assets/plus.svg) no-repeat
+    width: 21px
+    height: 21px
+    float: left
+    position: relative
+    left: 35px
+    top: 10px
+    z-index: -1
+
+  button
     font-family: SF-Pro, sans-serif
-    font-weight: normal
-    font-size: 17px
-    border-top: none
-    border-left: none
-    border-right: none
-    border-bottom-color: lightgray
-    padding: 18px 0
-
-    &:focus
-      outline:  none
-      caret-color: #002DFF
-
-  textarea
-    resize: vertical
-
+    font-weight: 500
+    font-size: 18px
+    width: 155px
+    border-color: #002DFF
+    border-radius: 30px
+    padding: 8px 0 8px 30px
+    background-color: transparent
+    cursor: pointer
+    color: #002DFF
