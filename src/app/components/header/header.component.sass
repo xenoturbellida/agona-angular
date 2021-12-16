@@ -2,6 +2,73 @@
   &Container
     display: flex
     justify-content: space-between
+    align-items: center
+    font-family: SF-Pro, sans-serif
+    font-weight: 500
+    font-size: 18px
+
+    *
+      font-family: inherit
 
   &SubContainer
     display: flex
+    align-items: baseline
+
+.ButtonWithIcon
+  span
+    background-image: url(../../../assets/tape.svg)
+    background-size: 20px
+    background-repeat: no-repeat
+    width: 20px
+    height: 20px
+    float: left
+    position: relative
+    top: 2px
+
+  button
+    border: none
+    background-color: transparent
+    cursor: pointer
+
+  .magnifierIcon
+    background-image: url(../../../assets/magnifier.svg)
+    background-size: 15px
+    width: 15px
+    height: 15px
+    top: 6px
+
+.addButton
+  span
+    background-image: url(../../../assets/plus-white.svg)
+    background-size: 17px
+    background-repeat: no-repeat
+    width: 17px
+    height: 17px
+    float: left
+    position: relative
+    left: 27px
+    top: 6px
+
+  button
+    border: none
+    border-radius: 20px
+    padding: 6px 10px 6px 35px
+    background-color: #002DFF
+    cursor: pointer
+    color: white
+
+.avatar
+  width: 40px
+  height: 40px
+
+  img
+    max-width: 100%
+    max-height: 100%
+
+.logo
+  width: 47px
+  height: 18px
+
+  img
+    max-width: 100%
+    max-height: 100%

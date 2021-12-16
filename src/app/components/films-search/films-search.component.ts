@@ -12,6 +12,7 @@ export class FilmsSearchComponent implements OnInit {
   filmsSuggested: IFilm[] = [];
 
   @Output() filmFoundEvent = new EventEmitter<IFilm>();
+  @Output() addManuallyEvent = new EventEmitter();
 
   constructor() { }
 
@@ -37,6 +38,10 @@ export class FilmsSearchComponent implements OnInit {
       const film = this.filmsSuggested[0];
       this.chooseFilm(film);
     }
+  }
+
+  addManually() {
+    this.addManuallyEvent.emit();
   }
 
   ngOnInit(): void {

@@ -10,6 +10,7 @@ import {IFilm} from "../../film.interface";
 export class FilmAdditionFormComponent implements OnInit {
   form: FormGroup;
   @Input() film: IFilm | undefined;
+  options: string[] = ['Фантастика','Фэнтези','Триллер']
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({

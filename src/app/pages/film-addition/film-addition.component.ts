@@ -31,9 +31,12 @@ export class FilmAdditionComponent implements OnInit {
   }
 
   fillFilmDetails(film: IFilm) {
-    console.log(film);
     this.film = film;
     this.showPreFilledForm = true;
   }
 
+  addManually() {
+    this.showSearch = false;
+    this.toggleForm.get('toggle')?.setValue(false);
+  }
 }

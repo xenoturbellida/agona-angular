@@ -21,12 +21,21 @@
   >
   </textarea>
   <label for="newFilmGenre">Жанр</label>
-  <input
+  <select
     id="newFilmGenre"
-    type="text"
-    placeholder="Выберите из списка"
     formControlName="genre"
-  />
+  >
+    <option value="" disabled selected hidden>Select your option</option>
+    <option >Триллер</option>
+    <option>Фэнтези</option>
+    <option>Фантастика</option>
+  </select>
+<!--  <input-->
+<!--    id="newFilmGenre"-->
+<!--    type="text"-->
+<!--    placeholder="Выберите из списка"-->
+<!--    formControlName="genre"-->
+<!--  />-->
   <label for="newFilmPoster">Постер</label>
   <input
     id="newFilmPoster"

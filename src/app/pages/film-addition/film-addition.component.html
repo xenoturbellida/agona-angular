@@ -4,7 +4,11 @@
   <form [formGroup]="toggleForm">
     <app-toggle formControlName="toggle"></app-toggle>
   </form>
-  <app-films-search *ngIf="showSearch && !showPreFilledForm" (filmFoundEvent)="fillFilmDetails($event)"></app-films-search>
+  <app-films-search
+    *ngIf="showSearch && !showPreFilledForm"
+    (filmFoundEvent)="fillFilmDetails($event)"
+    (addManuallyEvent)="addManually()"
+  ></app-films-search>
   <app-film-addition-form *ngIf="!showSearch"></app-film-addition-form>
   <app-film-addition-form *ngIf="showPreFilledForm && showSearch" [film]="film"></app-film-addition-form>
 </div>

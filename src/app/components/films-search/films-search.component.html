@@ -3,6 +3,8 @@
   <input
     id="film"
     [(ngModel)]="filmToSearch"
+    name="ngFilmToSearch"
+    #templateFilm="ngModel"
     (search)="lookForFilm()"
     [incremental]="filmToSearch"
     (keyup.enter)="tryToChooseFilm()"
@@ -10,7 +12,9 @@
     placeholder="Например, Титаник"
   />
 </div>
+
 <ul class="films">
+  <ng-container *ngIf="filmsSuggested.length > 0 || templateFilm.pristine else notFound">
   <li *ngFor="let film of filmsSuggested" class="badge">
     <img alt="Постер фильма" src="{{film.imageAddress}}" />
     <ul>
@@ -20,4 +24,19 @@
       <li class="badgeYear">{{film.year}}</li>
     </ul>
   </li>
+  </ng-container>
+
+  <ng-template #notFound>
+    <li class="badge">
+      <div class="posterNotFound"></div>
+      <ul>
+        <li class="filmNotFound">
+          Фильм не найден
+        </li>
+        <li>
+          <button type="button" (click)='addManually()' class="addManuallyButton">Добавьте его вручную</button>
+        </li>
+      </ul>
+    </li>
+  </ng-template>
 </ul>

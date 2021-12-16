@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, forwardRef} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
@@ -16,11 +16,10 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 })
 export class ToggleComponent implements ControlValueAccessor {
   innerValue: boolean = true;
-
   onChangeCallback = (v: boolean) => {};
   onTouchedCallback = () => {};
 
-  constructor() { }
+  constructor(private ref: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +35,7 @@ export class ToggleComponent implements ControlValueAccessor {
   writeValue(value: boolean): void {
     if (value !== this.innerValue) {
       this.innerValue = value;
+      this.ref.detectChanges();
     }
   }
 
@@ -46,7 +46,4 @@ export class ToggleComponent implements ControlValueAccessor {
       this.onTouchedCallback();
     }
   }
-
-
-
 }
