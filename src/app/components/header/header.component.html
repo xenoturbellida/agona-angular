@@ -1,26 +1,27 @@
-<div class='headerContainer'>
-  <div class='headerSubContainer'>
-    <div class="ButtonWithIcon">
-      <span class="icon tape"></span>
-      <button class="button">Коллекция</button>
-    </div>
-    <div class="addButton">
-      <span></span>
-      <button>Добавить</button>
-    </div>
-  </div>
-  <div class="logo">
-    <img class='avatar' src="../../../assets/logo.png" alt="Логотип"/>
-  </div>
-  <div class="headerSubContainer">
-    <div class="ButtonWithIcon">
-      <span class="magnifierIcon"></span>
-      <input type="search" placeholder="Поиск">
-<!--      <button>Поиск</button>-->
-    </div>
-    <div class="avatar">
-      <img src="../../../assets/avatar.png" alt="Аватар">
-    </div>
+<div class="header__wrapper">
+  <div class="header">
+    <nav>
+      <a class="link">
+        <img src="/assets/icons/tape.svg" alt="Иконка" />
+        Коллекция
+      </a>
 
+      <a class="link">
+        <img src="/assets/icons/plus.svg" alt="Иконка" />
+        Добавить
+      </a>
+    </nav>
+
+    <a class="logo">
+      <img src="/assets/icons/logo.png" alt="Логотип" />
+    </a>
+
+    <div class="actions">
+      <app-button>
+        <img src="/assets/icons/search.svg" alt="Иконка" />
+        Поиск
+      </app-button>
+      <img class="avatar" src="/assets/avatar.png" alt="Аватар" />
+    </div>
   </div>
 </div>

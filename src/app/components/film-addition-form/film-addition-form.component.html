@@ -21,30 +21,21 @@
   >
   </textarea>
   <label for="newFilmGenre">Жанр</label>
-  <select
+  <input
     id="newFilmGenre"
+    type="text"
+    placeholder="Выберите из списка"
     formControlName="genre"
-  >
-    <option value="" disabled selected hidden>Select your option</option>
-    <option >Триллер</option>
-    <option>Фэнтези</option>
-    <option>Фантастика</option>
-  </select>
-<!--  <input-->
-<!--    id="newFilmGenre"-->
-<!--    type="text"-->
-<!--    placeholder="Выберите из списка"-->
-<!--    formControlName="genre"-->
-<!--  />-->
+  />
   <label for="newFilmPoster">Постер</label>
   <input
     id="newFilmPoster"
     type="image"
     formControlName="poster"
   />
-  <div class="buttonPlus">
-    <span></span>
-    <button type="submit">Сохранить</button>
-  </div>
+  <app-button theme="SECONDARY" type="submit">
+    <img src="../../../assets/icons/plus.svg" alt="Иконка" />
+    Сохранить
+  </app-button>
 
 </form>

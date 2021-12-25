@@ -9,6 +9,7 @@ import { ToggleComponent } from './components/toggle/toggle.component';
 import { FilmAdditionComponent } from './pages/film-addition/film-addition.component';
 import { FilmAdditionFormComponent } from './components/film-addition-form/film-addition-form.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
     ToggleComponent,
     FilmAdditionComponent,
     FilmAdditionFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -38,7 +38,7 @@ export class FilmAdditionFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('the form was submitted');
+    alert('the form was submitted');
   }
 
 }
